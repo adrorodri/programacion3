@@ -129,7 +129,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_below="@id/textView4"/>
             </TableRow>
-        </>
+        </TableLayout>
     </LinearLayout>
 
 </ScrollView>
