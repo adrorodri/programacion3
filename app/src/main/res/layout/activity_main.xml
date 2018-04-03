@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -9,130 +8,248 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Frame Layout"
-            android:textStyle="bold"
-            android:layout_gravity="center_vertical|end"/>
+            android:layout_gravity="start"
+            android:text="Slides Example"
+            android:textStyle="bold" />
 
         <FrameLayout
-            android:layout_height="200dp"
             android:layout_width="match_parent"
-            android:background="#cdc"
-            android:layout_margin="10dp">
-            <TextView
-                android:text="1"
+            android:layout_height="200dp"
+            android:layout_margin="10dp"
+            android:background="#cccedd">
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|start"/>
-            <TextView
-                android:text="2"
+                android:layout_gravity="top|start"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/android_logo" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:src="@drawable/pollito" />
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="top|end"/>
-            <TextView
-                android:text="3"
+                android:layout_gravity="top|end"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="B" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="C" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="D" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"/>
+                android:layout_gravity="bottom|end"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/pato_dolares" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yes!" />
+            </LinearLayout>
         </FrameLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Relative Layout"
+            android:layout_gravity="center_vertical|end"
+            android:text="Frame Layout"
+            android:textStyle="bold" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="10dp"
+            android:background="#cdc">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|start"
+                android:text="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|end"
+                android:text="2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="3" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
             android:gravity="end"
-            android:textStyle="bold"
-            android:layout_gravity="center_vertical|end"/>
+            android:text="Relative Layout"
+            android:textStyle="bold" />
 
         <RelativeLayout
-            android:layout_height="200dp"
             android:layout_width="match_parent"
-            android:background="#ddcecc"
-            android:layout_margin="10dp">
+            android:layout_height="200dp"
+            android:layout_margin="10dp"
+            android:background="#ddcecc">
+
             <TextView
                 android:id="@+id/textView1"
-                android:text="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"/>
+                android:layout_centerVertical="true"
+                android:text="1" />
+
             <TextView
-                android:text="2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
                 android:layout_toEndOf="@id/textView1"
-                android:layout_alignParentTop="true"/>
+                android:text="2" />
+
             <TextView
-                android:text="3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"/>
+                android:layout_alignParentEnd="true"
+                android:text="3" />
+
             <TextView
                 android:id="@+id/textView4"
-                android:text="4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
                 android:background="#d67b75"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"/>
+                android:text="4" />
+
             <TextView
-                android:text="5"
-                android:layout_margin="10dp"
-                android:padding="10dp"
-                android:background="#89ce89"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/textView4"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@id/textView4"/>
+                android:layout_margin="10dp"
+                android:background="#89ce89"
+                android:padding="10dp"
+                android:text="5" />
         </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="end"
             android:text="Table Layout"
-            android:textStyle="bold"
-           android:layout_gravity="end"/>
+            android:textStyle="bold" />
 
         <TableLayout
-            android:layout_height="200dp"
             android:layout_width="match_parent"
-            android:background="#cccedd"
-            android:layout_margin="10dp">
+            android:layout_height="200dp"
+            android:layout_margin="10dp"
+            android:background="#cccedd">
+
             <TableRow>
+
                 <TextView
-                    android:text="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"/>
+                    android:layout_centerVertical="true"
+                    android:text="1" />
+
                 <TextView
-                    android:text="2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
                     android:layout_toEndOf="@id/textView1"
-                    android:layout_alignParentTop="true"/>
+                    android:text="2" />
             </TableRow>
 
             <TableRow>
+
                 <TextView
-                    android:text="3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:layout_alignParentEnd="true"/>
+                    android:layout_alignParentEnd="true"
+                    android:text="3" />
+
                 <TextView
-                    android:text="4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"/>
+                    android:layout_centerInParent="true"
+                    android:text="4" />
+
                 <TextView
-                    android:text="5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/textView4"
                     android:layout_centerHorizontal="true"
-                    android:layout_below="@id/textView4"/>
+                    android:text="5" />
             </TableRow>
         </TableLayout>
     </LinearLayout>
