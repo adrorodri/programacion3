@@ -16,22 +16,36 @@
             android:text="Slides Example"
             android:textStyle="bold" />
 
-        <FrameLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_margin="10dp"
             android:background="#cccedd">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|start"
-                android:orientation="horizontal">
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="Slides Example"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="10dp"
+            android:background="#cccedd">
 
                 <LinearLayout
+                    android:id="@+id/linearLayout1234"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -55,21 +69,24 @@
                 </LinearLayout>
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/android_logo" />
-            </LinearLayout>
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/android_logo"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@id/linearLayout1234"/>
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:src="@drawable/pollito" />
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/pollito"
+                android:onClick="clickAqui"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="top|end"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
                 android:orientation="horizontal">
 
                 <TextView
@@ -96,7 +113,8 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
                 android:gravity="bottom"
                 android:orientation="horizontal">
 
@@ -110,7 +128,7 @@
                     android:layout_height="wrap_content"
                     android:text="Yes!" />
             </LinearLayout>
-        </FrameLayout>
+        </RelativeLayout>
 
         <TextView
             android:layout_width="match_parent"
