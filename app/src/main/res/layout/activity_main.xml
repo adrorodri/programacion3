@@ -26,6 +26,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TEST JAVA"
+                android:onClick="openNewActivity"
+                android:padding="30dp"
                 android:id="@+id/testJavaText"
                 android:layout_centerInParent="true"/>
 
