@@ -11,11 +11,19 @@ import android.widget.Toast;
 
 public class SecondActivity extends AppCompatActivity {
 
+    TextView resultTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
         Log.d("LIFE CYCLE EVENTS", "ON CREATE (2)");
+
+        resultTextView = findViewById(R.id.testJavaText);
+
+        MainActivity.Person extra = (MainActivity.Person) getIntent().getSerializableExtra("testExtra");
+
+        resultTextView.setText(extra.getUsername() + "\n" + extra.getPassword());
     }
 
     @Override

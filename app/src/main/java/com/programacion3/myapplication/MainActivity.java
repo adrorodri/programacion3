@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.Serializable;
+
 public class MainActivity extends AppCompatActivity {
 
     TextView textViewTest;
@@ -44,7 +46,39 @@ public class MainActivity extends AppCompatActivity {
 
     public void openNewActivity(View view) {
         Intent intent = new Intent(this, SecondActivity.class);
+
+        Person person = new Person(editTextTest.getText().toString(),
+                editTextTest.getText().toString().toUpperCase());
+
+        intent.putExtra("testExtra", person);
+
         startActivity(intent);
+    }
+
+    public class Person implements Serializable {
+        public String username;
+        public String password;
+
+        public Person(String username, String password) {
+            this.username = username;
+            this.password = password;
+        }
+
+        public String getUsername() {
+            return username;
+        }
+
+        public void setUsername(String username) {
+            this.username = username;
+        }
+
+        public String getPassword() {
+            return password;
+        }
+
+        public void setPassword(String password) {
+            this.password = password;
+        }
     }
 
     @Override
