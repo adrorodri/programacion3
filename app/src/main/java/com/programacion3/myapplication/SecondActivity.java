@@ -1,17 +1,13 @@
 package com.programacion3.myapplication;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class SecondActivity extends AppCompatActivity {
 
-    TextView resultTextView;
+    TextView credentialsTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,12 +15,17 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
         Log.d("LIFE CYCLE EVENTS", "ON CREATE (2)");
 
-        resultTextView = findViewById(R.id.testJavaText);
+        // Initializing Views
+        credentialsTextView = findViewById(R.id.textViewCredentials);
 
-        Person extra = (Person) getIntent().getSerializableExtra("testExtra");
-
-        resultTextView.setText(extra.getUsername() + "\n" + extra.getPassword());
+        // Getting Serializable Object from extra
+        Person extra = (Person) getIntent().getSerializableExtra("CredentialsExtra");
+        credentialsTextView.setText(extra.getUsername() + "\n" + extra.getPassword());
     }
+
+    /**
+     * LifeCycle events
+     */
 
     @Override
     protected void onStart() {

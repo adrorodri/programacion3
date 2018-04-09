@@ -23,18 +23,19 @@
             android:background="#cccedd">
 
             <TextView
+                android:id="@+id/textViewTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TEST JAVA"
-                android:onClick="openNewActivity"
-                android:padding="30dp"
-                android:id="@+id/testJavaText"
-                android:layout_centerInParent="true"/>
+                android:layout_centerInParent="true"
+                android:text="Hello! These are your credentials:" />
 
-            <EditText
-                android:layout_width="200dp"
+            <TextView
+                android:id="@+id/textViewCredentials"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/testEditText"/>
+                android:layout_below="@id/textViewTitle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp" />
 
         </RelativeLayout>
 

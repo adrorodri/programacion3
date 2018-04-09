@@ -9,15 +9,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.Serializable;
-
 public class MainActivity extends AppCompatActivity {
 
     TextView textViewTest;
+    EditText editTextUsername;
+    EditText editTextPassword;
+    String usernameValue;
+    String passwordValue;
 
-    EditText editTextTest;
-
-    String editTextValue;
+    String validUsername = "upb";
+    String validPassword = "p4ssw0rd";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,25 +36,48 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        editTextTest = findViewById(R.id.testEditText);
-
-        editTextValue = String.valueOf(editTextTest.getText());
+        editTextUsername = findViewById(R.id.editTextUsername);
+        editTextPassword = findViewById(R.id.editTextPassword);
     }
+
+    /**
+     * Click Listener example
+     * @param view view from XML
+     */
 
     public void clickAqui(View view) {
         Toast.makeText(this, "Pollito Click Listener", Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * Open new Activity example
+     * @param view view from XML
+     */
+
     public void openNewActivity(View view) {
-        Intent intent = new Intent(this, SecondActivity.class);
+        // Get the new values from the Edit Text
+        usernameValue = String.valueOf(editTextUsername.getText());
+        passwordValue = String.valueOf(editTextPassword.getText());
 
-        Person person = new Person(editTextTest.getText().toString(),
-                editTextTest.getText().toString().toUpperCase());
+        if(usernameValue.equals(validUsername) && passwordValue.equals(validPassword)){
+            // Open new Activity (SecondActivity.class)
+            Intent intent = new Intent(this, SecondActivity.class);
 
-        intent.putExtra("testExtra", person);
+            // Create serializable object
+            Person person = new Person(usernameValue, passwordValue);
 
-        startActivity(intent);
+            // Add object to intent extra
+            intent.putExtra("CredentialsExtra", person);
+
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "Invalid credentials! Help: " + validUsername + "," + validPassword, Toast.LENGTH_SHORT).show();
+        }
     }
+
+    /**
+     * LifeCycle events
+     */
 
     @Override
     protected void onStart() {

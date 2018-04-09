@@ -13,7 +13,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:text="Slides Example"
+            android:text="Second Activity"
             android:textStyle="bold" />
 
         <RelativeLayout
@@ -25,16 +25,26 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TEST JAVA"
+                android:text="Click me!"
                 android:onClick="openNewActivity"
                 android:padding="30dp"
                 android:id="@+id/testJavaText"
-                android:layout_centerInParent="true"/>
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"/>
 
             <EditText
+                android:hint="Enter your username"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/testEditText"/>
+                android:id="@+id/editTextUsername"/>
+
+            <EditText
+                android:hint="Enter your password"
+                android:inputType="textPassword"
+                android:layout_below="@id/editTextUsername"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/editTextPassword"/>
 
         </RelativeLayout>
 
