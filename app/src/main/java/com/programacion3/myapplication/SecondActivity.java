@@ -21,7 +21,7 @@ public class SecondActivity extends AppCompatActivity {
 
         resultTextView = findViewById(R.id.testJavaText);
 
-        MainActivity.Person extra = (MainActivity.Person) getIntent().getSerializableExtra("testExtra");
+        Person extra = (Person) getIntent().getSerializableExtra("testExtra");
 
         resultTextView.setText(extra.getUsername() + "\n" + extra.getPassword());
     }
