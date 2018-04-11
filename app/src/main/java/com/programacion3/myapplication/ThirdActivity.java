@@ -27,21 +27,28 @@ public class ThirdActivity extends AppCompatActivity {
         textViewUsuario.setTextColor(Color.RED);
 
         // Create generic Linear Parameters for Linear Layout
-        LinearLayout.LayoutParams layoutParams =
+        LinearLayout.LayoutParams layoutParamsChild =
                 new LinearLayout.LayoutParams(
                         ViewGroup.LayoutParams.WRAP_CONTENT,
                         ViewGroup.LayoutParams.WRAP_CONTENT,
                         1);
 
+        // Create generic Linear Parameters for Linear Layout
+        LinearLayout.LayoutParams layoutParamsLinearLayoutChild =
+                new LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        1);
+
         // Apply the layout params
-        textViewUsuario.setLayoutParams(layoutParams);
+        textViewUsuario.setLayoutParams(layoutParamsChild);
 
         // Add the Child view (TextView) to the Parent (LinearLayout)
         linearLayoutParent.addView(textViewUsuario);
 
         // Create our child LinearLayout object
         LinearLayout linearLayoutInternal = new LinearLayout(this);
-        linearLayoutInternal.setLayoutParams(layoutParams);
+        linearLayoutInternal.setLayoutParams(layoutParamsLinearLayoutChild);
 
         // Setting the orientation
         linearLayoutInternal.setOrientation(LinearLayout.HORIZONTAL);
@@ -51,8 +58,8 @@ public class ThirdActivity extends AppCompatActivity {
         Button button2 = new Button(this);
 
         // Set layout params for buttons
-        button1.setLayoutParams(layoutParams);
-        button2.setLayoutParams(layoutParams);
+        button1.setLayoutParams(layoutParamsChild);
+        button2.setLayoutParams(layoutParamsChild);
 
         // Set other attributes...
         button1.setText("ENVIAR");

@@ -7,11 +7,13 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity {
 
     TextView credentialsTextView;
+    Button buttonNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,13 +23,14 @@ public class SecondActivity extends AppCompatActivity {
 
         // Initializing Views
         credentialsTextView = findViewById(R.id.textViewCredentials);
+        buttonNext = findViewById(R.id.buttonNext);
 
         // Getting Serializable Object from extra
         Person extraPerson = (Person) getIntent().getSerializableExtra("CredentialsExtra");
         credentialsTextView.setText(extraPerson.getUsername() + "\n" + extraPerson.getPassword());
 
         // Setting click listener to go to the Third Activity
-        credentialsTextView.setOnClickListener(new View.OnClickListener() {
+        buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Context context;
