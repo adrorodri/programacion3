@@ -1,8 +1,8 @@
 package com.programacion3.myapplication;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Click Listener example
+     *
      * @param view view from XML
      */
 
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Open new Activity example
+     *
      * @param view view from XML
      */
 
@@ -59,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         usernameValue = String.valueOf(editTextUsername.getText());
         passwordValue = String.valueOf(editTextPassword.getText());
 
-        if(usernameValue.equals(validUsername) && passwordValue.equals(validPassword)){
+        if (usernameValue.equals(validUsername) && passwordValue.equals(validPassword)) {
             // Open new Activity (SecondActivity.class)
             Intent intent = new Intent(this, SecondActivity.class);
 

@@ -1,8 +1,12 @@
 package com.programacion3.myapplication;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity {
@@ -19,8 +23,24 @@ public class SecondActivity extends AppCompatActivity {
         credentialsTextView = findViewById(R.id.textViewCredentials);
 
         // Getting Serializable Object from extra
-        Person extra = (Person) getIntent().getSerializableExtra("CredentialsExtra");
-        credentialsTextView.setText(extra.getUsername() + "\n" + extra.getPassword());
+        Person extraPerson = (Person) getIntent().getSerializableExtra("CredentialsExtra");
+        credentialsTextView.setText(extraPerson.getUsername() + "\n" + extraPerson.getPassword());
+
+        // Setting click listener to go to the Third Activity
+        credentialsTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context;
+
+                // Get the context by either:
+                context = SecondActivity.this;
+                // or
+                context = v.getContext();
+
+                Intent intent = new Intent(context, ThirdActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     /**
