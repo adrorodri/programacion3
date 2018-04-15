@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class ThirdActivity extends AppCompatActivity {
+public class ProgrammaticViewsActivity extends AppCompatActivity {
 
     LinearLayout linearLayoutParent;
     TextView textViewUsuario;
@@ -16,7 +16,7 @@ public class ThirdActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_third);
+        setContentView(R.layout.activity_programmatic_views);
 
         // Get the parent Layout
         linearLayoutParent = findViewById(R.id.linearLayoutParent);

@@ -1,3 +1,38 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <!--General Strings-->
+    <string name="app_name">Programación 3 Samples</string>
+
+    <!--Main Activity-->
+    <string name="loginActivity">Login</string>
+    <string name="layoutsActivity">Layouts</string>
+    <string name="widgetsActivity">Widgets</string>
+    <string name="lifeCycleActivity">Life Cycle Events</string>
+    <string name="imageActivity">Image Activity</string>
+    <string name="programmaticViewsActivity">Programmatic views Activity</string>
+    <string name="marginPAddingActivity">Margin / Padding</string>
+
+    <!--LifeCycle Activity-->
+    <string name="checkLogs">Check logs!</string>
+
+    <!--Margin Padding Activity-->
+    <string name="marginPaddingLabelPadding1">Padding 1</string>
+    <string name="marginPaddingLabelPadding2">Padding 2</string>
+    <string name="marginPaddingLabelMargin1">Margin 1</string>
+    <string name="marginPaddingLabelMargin2">Margin 2</string>
+
+    <!--Layouts Activity-->
+
+
+    <!--Widgets Activity-->
+    <string name="on">Encendido!</string>
+    <string name="off">Apagado!</string>
+
+    <!--Image Activity-->
+    <string name="switchScaleType">Switch ScaleType</string>
+
+    <!--Login Activity-->
+    <string name="hintUsername">Enter your username</string>
+    <string name="hintPassword">Enter your password</string>
+    <string name="loginButton">Login</string>
+
 </resources>

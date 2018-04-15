@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.programacion3.myapplication.WidgetsActivity"
+    android:orientation="vertical">
+
+    <ToggleButton
+        android:id="@+id/toggleMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOn="@string/on"
+        android:textOff="@string/off"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/radio1"
+            android:text="Bien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="radioChanged"/>
+        <RadioButton
+            android:id="@+id/radio2"
+            android:text="Mas o menos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="radioChanged" />
+        <RadioButton
+            android:id="@+id/radio3"
+            android:text="Mal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="radioChanged" />
+    </RadioGroup>
+
+    <CheckBox
+        android:layout_marginTop="@dimen/marginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check box example"/>
+
+</LinearLayout>

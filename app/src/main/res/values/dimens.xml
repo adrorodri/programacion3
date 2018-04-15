@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="marginButton">13dp</dimen>
+    <dimen name="marginDefault">10dp</dimen>
+    <dimen name="paddingDefault">15dp</dimen>
+    <dimen name="editTextWidth">200dp</dimen>
+</resources>
