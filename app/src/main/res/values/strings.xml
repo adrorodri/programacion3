@@ -10,6 +10,7 @@
     <string name="imageActivity">Image Activity</string>
     <string name="programmaticViewsActivity">Programmatic views Activity</string>
     <string name="marginPAddingActivity">Margin / Padding</string>
+    <string name="listActivity">List</string>
 
     <!--LifeCycle Activity-->
     <string name="checkLogs">Check logs!</string>
@@ -33,6 +34,8 @@
     <!--Login Activity-->
     <string name="hintUsername">Enter your username</string>
     <string name="hintPassword">Enter your password</string>
+    <string name="loginForgotPassword">Forgot your password? Click here!</string>
     <string name="loginButton">Login</string>
+    <string name="loginHelp">Let`s start!</string>
 
 </resources>

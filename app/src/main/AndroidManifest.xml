@@ -27,7 +27,8 @@
         <activity android:name=".LinearLayoutActivity" />
         <activity android:name=".TableLayoutActivity" />
         <activity android:name=".ImageActivity" />
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".ListActivity"></activity>
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.programacion3.myapplication;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -43,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
             }
             case R.id.buttonMainWidgets: {
                 intent = new Intent(this, WidgetsActivity.class);
+                break;
+            }
+            case R.id.buttonMainList: {
+                intent = new Intent(this, ListActivity.class);
                 break;
             }
             default: {

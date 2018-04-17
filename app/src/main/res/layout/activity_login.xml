@@ -1,17 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/gradient_background"
+    android:orientation="vertical"
     tools:context="com.programacion3.myapplication.LoginActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/company_logo"
+        android:tint="@color/colorWhite" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/loginHelp"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/textBig"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/marginDefault"
+        android:layout_marginTop="@dimen/marginDefault"
+        android:background="@drawable/round_box"
+        android:gravity="center"
         android:orientation="vertical">
 
         <EditText
@@ -19,6 +38,7 @@
             android:layout_width="@dimen/editTextWidth"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:layout_margin="@dimen/marginDefault"
             android:gravity="center"
             android:hint="@string/hintUsername"
             android:textColor="@color/colorWhite" />
@@ -28,15 +48,29 @@
             android:layout_width="@dimen/editTextWidth"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:layout_margin="@dimen/marginDefault"
             android:gravity="center"
             android:hint="@string/hintPassword"
             android:textColor="@color/colorWhite" />
 
         <Button
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_background"
+            android:gravity="center"
             android:onClick="login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/loginButton" />
+            android:text="@string/loginButton"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/textMedium"
+            android:textStyle="bold" />
+
     </LinearLayout>
 
-</FrameLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/marginDefault"
+        android:gravity="center"
+        android:text="@string/loginForgotPassword"
+        android:textColor="@color/colorAccent" />
+</LinearLayout>

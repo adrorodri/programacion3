@@ -4,4 +4,6 @@
     <dimen name="marginDefault">10dp</dimen>
     <dimen name="paddingDefault">15dp</dimen>
     <dimen name="editTextWidth">200dp</dimen>
+    <dimen name="textBig">30sp</dimen>
+    <dimen name="textMedium">15sp</dimen>
 </resources>

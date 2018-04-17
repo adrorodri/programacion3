@@ -13,8 +13,8 @@ public class LoginActivity extends AppCompatActivity {
     EditText editTextPassword;
     String usernameValue;
     String passwordValue;
-    String validUsername = "upb";
-    String validPassword = "p4ssw0rd";
+    String[] validUsernames = {"upb", "ucb"};
+    String[] validPasswords = {"p4ssw0rd", "p4ssw0rd"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,19 +36,23 @@ public class LoginActivity extends AppCompatActivity {
         usernameValue = String.valueOf(editTextUsername.getText());
         passwordValue = String.valueOf(editTextPassword.getText());
 
-        if (usernameValue.equals(validUsername) && passwordValue.equals(validPassword)) {
-            // Open new Activity (SecondActivity.class)
-            Intent intent = new Intent(this, LoginSuccessActivity.class);
+        for(int i = 0; i < validUsernames.length ; i++) {
+            if (usernameValue.equals(validUsernames[i]) && passwordValue.equals(validPasswords[i])) {
+                // Open new Activity (SecondActivity.class)
+                Intent intent = new Intent(this, LoginSuccessActivity.class);
 
-            // Create serializable object
-            Person person = new Person(usernameValue, passwordValue);
+                // Create serializable object
+                Person person = new Person(usernameValue, passwordValue);
 
-            // Add object to intent extra
-            intent.putExtra("CredentialsExtra", person);
+                // Add object to intent extra
+                intent.putExtra("CredentialsExtra", person);
 
-            startActivity(intent);
-        } else {
-            Toast.makeText(this, "Invalid credentials! Help: " + validUsername + "," + validPassword, Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+
+                return;
+            }
         }
+
+        Toast.makeText(this, "Invalid credentials!", Toast.LENGTH_SHORT).show();
     }
 }
