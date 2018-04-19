@@ -1,86 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
+    android:fitsSystemWindows="true">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:background="@color/colorPrimary">
 
-        <Button
-            android:id="@+id/buttonMainLayouts"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:onClick="buttonClick"
-            android:text="@string/layoutsActivity"
-            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/buttonMainMarginPadding"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:onClick="buttonClick"
-            android:text="@string/marginPAddingActivity"
-            android:textStyle="bold" />
+            <Button
+                android:id="@+id/buttonMainLayouts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="buttonClick"
+                android:text="@string/layoutsActivity"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/buttonMainImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:onClick="buttonClick"
-            android:text="@string/imageActivity"
-            android:textStyle="bold" />
+            <Button
+                android:id="@+id/buttonMainMarginPadding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="buttonClick"
+                android:text="@string/marginPAddingActivity"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/buttonMainLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:onClick="buttonClick"
-            android:text="@string/loginActivity"
-            android:textStyle="bold" />
+            <Button
+                android:id="@+id/buttonMainImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="buttonClick"
+                android:text="@string/imageActivity"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/buttonMainLifeCycle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:onClick="buttonClick"
-            android:text="@string/lifeCycleActivity"
-            android:textStyle="bold" />
+            <Button
+                android:id="@+id/buttonMainLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="buttonClick"
+                android:text="@string/loginActivity"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/buttonMainProgrammaticViews"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:onClick="buttonClick"
-            android:text="@string/programmaticViewsActivity"
-            android:textStyle="bold" />
+            <Button
+                android:id="@+id/buttonMainLifeCycle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="buttonClick"
+                android:text="@string/lifeCycleActivity"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/buttonMainWidgets"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:onClick="buttonClick"
-            android:text="@string/widgetsActivity"
-            android:textStyle="bold" />
+            <Button
+                android:id="@+id/buttonMainProgrammaticViews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="buttonClick"
+                android:text="@string/programmaticViewsActivity"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/buttonMainList"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:onClick="buttonClick"
-            android:text="@string/listActivity"
-            android:textStyle="bold" />
+            <Button
+                android:id="@+id/buttonMainWidgets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="buttonClick"
+                android:text="@string/widgetsActivity"
+                android:textStyle="bold" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/buttonMainList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="buttonClick"
+                android:text="@string/listActivity"
+                android:textStyle="bold" />
 
-</ScrollView>
+            <Button
+                android:id="@+id/buttonMainRecycler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="buttonClick"
+                android:text="@string/recyclerActivity"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        layout="@layout/drawer_layout"/>
+
+</android.support.v4.widget.DrawerLayout>

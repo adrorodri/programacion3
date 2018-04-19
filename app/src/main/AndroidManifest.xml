@@ -29,6 +29,7 @@
         <activity android:name=".ImageActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".ListActivity"></activity>
+        <activity android:name=".RecyclerActivity" />
     </application>
 
 </manifest>

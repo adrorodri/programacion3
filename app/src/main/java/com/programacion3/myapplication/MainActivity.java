@@ -50,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(this, ListActivity.class);
                 break;
             }
+            case R.id.buttonMainRecycler: {
+                intent = new Intent(this, RecyclerActivity.class);
+                break;
+            }
             default: {
                 intent = new Intent(this, LayoutsActivity.class);
                 break;

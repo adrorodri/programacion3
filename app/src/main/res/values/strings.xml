@@ -10,7 +10,8 @@
     <string name="imageActivity">Image Activity</string>
     <string name="programmaticViewsActivity">Programmatic views Activity</string>
     <string name="marginPAddingActivity">Margin / Padding</string>
-    <string name="listActivity">List</string>
+    <string name="listActivity">ListView</string>
+    <string name="recyclerActivity">RecyclerView</string>
 
     <!--LifeCycle Activity-->
     <string name="checkLogs">Check logs!</string>
