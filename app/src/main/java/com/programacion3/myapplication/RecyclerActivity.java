@@ -2,6 +2,7 @@ package com.programacion3.myapplication;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 
@@ -28,8 +29,18 @@ public class RecyclerActivity extends AppCompatActivity {
             productList.add(new Product(i, i * 3.0, 20 - i, "Descripcion " + String.valueOf(i), R.drawable.pollito));
         }
 
+        // Create RecyclerView adapter
         ProductsRecyclerAdapter adapter = new ProductsRecyclerAdapter(this, productList);
+
+        // Create and set Layout manager:
+        // LinearLayoutManager => Linear
+        // StaggeredGridLayoutManager => Like Pinterest
+        // GridLayoutManager => Grid
+
+        // recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
+
+        // Set adapter
         recyclerView.setAdapter(adapter);
     }
 }
