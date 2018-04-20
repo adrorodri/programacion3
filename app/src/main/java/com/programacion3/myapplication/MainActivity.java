@@ -1,10 +1,14 @@
 package com.programacion3.myapplication;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.PopupMenu;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,8 +18,36 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.mainMenuContactos: {
+                Toast.makeText(this, "Contactos", Toast.LENGTH_SHORT).show();
+                break;
+            }
+            case R.id.mainMenuLogout: {
+                Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();
+                break;
+            }
+            case R.id.mainMenuExit: {
+                Toast.makeText(this, "Exit", Toast.LENGTH_SHORT).show();
+                break;
+            }
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
     public void buttonClick(View view) {
-        Intent intent;
+        Intent intent = null;
 
         switch (view.getId()) {
             case R.id.buttonMainLayouts: {
@@ -54,13 +86,26 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(this, RecyclerActivity.class);
                 break;
             }
+            case R.id.buttonMainPopupMenu: {
+                PopupMenu popupMenu = new PopupMenu(this, view);
+                popupMenu.inflate(R.menu.main_menu);
+                popupMenu.show();
+                break;
+            }
             default: {
                 intent = new Intent(this, LayoutsActivity.class);
                 break;
             }
         }
 
-        startActivity(intent);
+        if (intent != null) {
+            startActivity(intent);
+        }
+
+    }
+
+    public void onMenuItemClick(MenuItem item) {
+        Toast.makeText(this, "CLICK EN POPUP", Toast.LENGTH_SHORT).show();
     }
 }
 

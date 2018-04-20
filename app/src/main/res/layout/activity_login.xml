@@ -29,7 +29,6 @@
         android:layout_gravity="center"
         android:layout_marginBottom="@dimen/marginDefault"
         android:layout_marginTop="@dimen/marginDefault"
-        android:background="@drawable/round_box"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -54,9 +53,9 @@
             android:textColor="@color/colorWhite" />
 
         <Button
+            android:background="@drawable/smooth_square"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:background="@drawable/button_background"
             android:gravity="center"
             android:onClick="login"
             android:text="@string/loginButton"

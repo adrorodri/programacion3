@@ -39,4 +39,10 @@
     <string name="loginButton">Login</string>
     <string name="loginHelp">Let`s start!</string>
 
+    <!--Main Menu-->
+    <string name="main_menu_logout">Logout</string>
+    <string name="main_menu_exit">Exit</string>
+    <string name="main_menu_contactos">Contactos</string>
+    <string name="main_menu_contactos_add">Agregar</string>
+    <string name="main_menu_contactos_delete">Borrar</string>
 </resources>

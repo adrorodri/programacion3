@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="@drawable/pollito"
+        app:showAsAction="always"
+        android:id="@+id/mainMenuContactos"
+        android:onClick="onMenuItemClick"
+        android:title="@string/main_menu_contactos">
+        <menu>
+            <item android:id="@+id/mainMenuContactosAdd"
+                android:title="@string/main_menu_contactos_add"/>
+            <item android:id="@+id/mainMenuContactosDelede"
+                android:title="@string/main_menu_contactos_delete"/>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/mainMenuLogout"
+        android:title="@string/main_menu_logout"/>
+    <item
+        android:id="@+id/mainMenuExit"
+        android:title="@string/main_menu_exit"/>
+</menu>

@@ -97,6 +97,15 @@
                 android:text="@string/recyclerActivity"
                 android:textStyle="bold" />
 
+            <Button
+                android:id="@+id/buttonMainPopupMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="buttonClick"
+                android:text="POP UP"
+                android:textStyle="bold" />
+
         </LinearLayout>
 
     </ScrollView>
