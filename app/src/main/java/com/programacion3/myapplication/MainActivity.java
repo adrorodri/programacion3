@@ -16,6 +16,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent intent = getIntent();
+        String action = intent.getAction();
+        String type = intent.getType();
+
+        if (action != null &&
+                action.equals(Intent.ACTION_SEND) &&
+                type != null &&
+                type.equals("text/plain")) {
+            if (intent.hasExtra(Intent.EXTRA_TEXT)) {
+                String sharedText = intent.getStringExtra(Intent.EXTRA_TEXT);
+                Toast.makeText(this, sharedText, Toast.LENGTH_LONG).show();
+            }
+        }
     }
 
     @Override
