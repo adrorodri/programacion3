@@ -100,6 +100,10 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(this, RecyclerActivity.class);
                 break;
             }
+            case R.id.buttonMainNotifications: {
+                intent = new Intent(this, NotificationsActivity.class);
+                break;
+            }
             case R.id.buttonMainPopupMenu: {
                 PopupMenu popupMenu = new PopupMenu(this, view);
                 popupMenu.inflate(R.menu.main_menu);

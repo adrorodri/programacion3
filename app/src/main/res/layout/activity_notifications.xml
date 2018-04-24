@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:id="@+id/parentView">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/buttonToast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="buttonClick"
+            android:text="Toast"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/buttonCustomToast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="buttonClick"
+            android:text="Custom Toast"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/buttonDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="buttonClick"
+            android:text="Dialog"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/buttonCustomDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="buttonClick"
+            android:text="Custom Dialog"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/buttonPopup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="buttonClick"
+            android:text="Popup"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/buttonSnackbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="buttonClick"
+            android:text="Snackbar"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/buttonNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="buttonClick"
+            android:text="Notification"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</ScrollView>

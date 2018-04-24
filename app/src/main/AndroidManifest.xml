@@ -34,6 +34,7 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".ListActivity"></activity>
         <activity android:name=".RecyclerActivity" />
+        <activity android:name=".NotificationsActivity" />
     </application>
 
 </manifest>
