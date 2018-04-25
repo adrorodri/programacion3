@@ -14,6 +14,7 @@ public class LoginSuccessActivity extends AppCompatActivity {
 
     TextView credentialsTextView;
     Button buttonNext;
+    Person extraPerson;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +26,21 @@ public class LoginSuccessActivity extends AppCompatActivity {
         credentialsTextView = findViewById(R.id.textViewCredentials);
 
         // Getting Serializable Object from extra
-        Person extraPerson = (Person) getIntent().getSerializableExtra("CredentialsExtra");
+        extraPerson = (Person) getIntent().getSerializableExtra("CredentialsExtra");
         credentialsTextView.setText(extraPerson.getUsername() + "\n" + extraPerson.getPassword());
+    }
+
+    // When back is pressed, we will finish the activity, but we will send the same "Person" object
+    // that we received from the extras.
+
+    @Override
+    public void onBackPressed() {
+        // Set the value to return to the previous activity
+        Intent resultIntent = new Intent();
+        resultIntent.putExtra("CredentialsExtra", extraPerson);
+        setResult(RESULT_OK, resultIntent);
+        // Once we have set the result, we finish the activity normally
+        finish();
     }
 }
 

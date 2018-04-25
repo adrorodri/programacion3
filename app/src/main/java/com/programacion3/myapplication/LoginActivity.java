@@ -15,6 +15,8 @@ public class LoginActivity extends AppCompatActivity {
     String passwordValue;
     String[] validUsernames = {"upb", "ucb"};
     String[] validPasswords = {"p4ssw0rd", "p4ssw0rd"};
+    Person person;
+    private static int REQUEST_CODE_CREDENTIALS = 123; // Must be lower than 16 bits
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,17 +44,33 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, LoginSuccessActivity.class);
 
                 // Create serializable object
-                Person person = new Person(usernameValue, passwordValue);
+                person = new Person(usernameValue, passwordValue);
 
                 // Add object to intent extra
                 intent.putExtra("CredentialsExtra", person);
 
-                startActivity(intent);
+                // Instead of calling just startActivity(intent), we call
+                // startActivityForResult(intent, SOME_REQUEST_CONSTANT)
+                // to expect a return value from the next activity (when it finishes).
+                // We handle the returned value in the method onActivityResult
+
+                startActivityForResult(intent, REQUEST_CODE_CREDENTIALS);
 
                 return;
             }
         }
 
         Toast.makeText(this, "Invalid credentials!", Toast.LENGTH_SHORT).show();
+    }
+
+    // Called only if another activity was started with startActivityForResult
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE_CREDENTIALS) {
+            // Save or update the Person variable from this activity
+            person = (Person) data.getSerializableExtra("CredentialsExtra");
+            Toast.makeText(this, "Received credentials: " + person.getUsername() + ", " + person.getPassword(), Toast.LENGTH_SHORT).show();
+        }
     }
 }
