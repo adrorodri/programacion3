@@ -110,6 +110,10 @@ public class MainActivity extends AppCompatActivity {
                 popupMenu.show();
                 break;
             }
+            case R.id.buttonMainStorage: {
+                intent = new Intent(this, StorageActivity.class);
+                break;
+            }
             default: {
                 intent = new Intent(this, LayoutsActivity.class);
                 break;
