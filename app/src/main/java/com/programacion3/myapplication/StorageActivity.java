@@ -8,9 +8,18 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class StorageActivity extends AppCompatActivity {
 
@@ -19,6 +28,8 @@ public class StorageActivity extends AppCompatActivity {
     static final String KEY_USERNAME = "username";
     EditText editTextUsername;
     TextView textViewJSON;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +85,52 @@ public class StorageActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString(KEY_USERNAME, editTextUsername.getText().toString());
                 editor.apply();
+                break;
+            }
+            case R.id.writeFileButton: {
+
+                Person person = new Person("UPB", "p4ssw0rd");
+
+                String message = new Gson().toJson(person);
+
+                try {
+                    FileOutputStream fileOutputStream = null;
+                    fileOutputStream = openFileOutput("myText.txt", MODE_PRIVATE);
+                    fileOutputStream.write(message.getBytes());
+                    fileOutputStream.close();
+
+                    Toast.makeText(this, "Escritura correcta", Toast.LENGTH_SHORT).show();
+                } catch (FileNotFoundException e) {
+                    Toast.makeText(this, "Error al escribir", Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    Toast.makeText(this, "Error al escribir", Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+                }
+
+                break;
+            }
+            case R.id.readFileButton: {
+
+                try {
+                    FileInputStream fileInputStream = openFileInput("myText.txt");
+                    InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
+                    BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+                    StringBuffer stringBuffer = new StringBuffer();
+                    String lines;
+                    while ((lines = bufferedReader.readLine()) != null) {
+                        stringBuffer.append(lines + "\n");
+                    }
+
+                    Person person = new Gson().fromJson(stringBuffer.toString().trim(), Person.class);
+                    Toast.makeText(this, person.getUsername(), Toast.LENGTH_LONG).show();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
                 break;
             }
         }

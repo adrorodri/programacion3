@@ -12,12 +12,15 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.SEND"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="text/plain"/>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
         <activity android:name=".LoginSuccessActivity" />
@@ -32,9 +35,10 @@
         <activity android:name=".TableLayoutActivity" />
         <activity android:name=".ImageActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".ListActivity"></activity>
+        <activity android:name=".ListActivity" />
         <activity android:name=".RecyclerActivity" />
         <activity android:name=".NotificationsActivity" />
+        <activity android:name=".StorageActivity"></activity>
     </application>
 
 </manifest>
