@@ -1,7 +1,9 @@
 package com.programacion3.myapplication;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -10,7 +12,16 @@ import android.view.View;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.List;
+
+import pub.devrel.easypermissions.AfterPermissionGranted;
+import pub.devrel.easypermissions.EasyPermissions;
+import pub.devrel.easypermissions.PermissionRequest;
+
+public class MainActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
+
+    // Request code for permissions (Can be any value lower than 16 bits)
+    private static final int RC_CAMERA_AND_LOCATION = 123;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +41,13 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, sharedText, Toast.LENGTH_LONG).show();
             }
         }
+
+        // Request all permissions that our app will use
+        String[] perms = {Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE};
+        EasyPermissions.requestPermissions(
+                new PermissionRequest.Builder(this, RC_CAMERA_AND_LOCATION, perms)
+                        .build());
     }
 
     @Override
@@ -41,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         switch (item.getItemId()) {
             case R.id.mainMenuContactos: {
                 Toast.makeText(this, "Contactos", Toast.LENGTH_SHORT).show();
@@ -56,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             }
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -128,6 +144,27 @@ public class MainActivity extends AppCompatActivity {
 
     public void onMenuItemClick(MenuItem item) {
         Toast.makeText(this, "CLICK EN POPUP", Toast.LENGTH_SHORT).show();
+    }
+
+    // Method called when permissions are resolved (accepted or denied) from the dialog
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        // Forward results to EasyPermissions
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+    }
+
+    @Override
+    public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {
+        Toast.makeText(this, "PERMISOS ACEPTADOS!", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onPermissionsDenied(int requestCode, @NonNull List<String> perms) {
+        Toast.makeText(this, "PERMISOS RECHAZADOS!", Toast.LENGTH_SHORT).show();
+        // Close the app, as we don't have permissions to use it. App may crash!
+        finish();
     }
 }
 

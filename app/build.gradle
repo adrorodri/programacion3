@@ -31,5 +31,5 @@ dependencies {
     // Snackbar and other components from Support Library
     compile 'com.android.support:design:27.1.0'
     compile 'com.google.code.gson:gson:2.8.2'
-
+    implementation 'pub.devrel:easypermissions:1.2.0'
 }

@@ -1,8 +1,9 @@
 package com.programacion3.myapplication;
 
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Environment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,10 +16,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class StorageActivity extends AppCompatActivity {
@@ -28,8 +31,6 @@ public class StorageActivity extends AppCompatActivity {
     static final String KEY_USERNAME = "username";
     EditText editTextUsername;
     TextView textViewJSON;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public class StorageActivity extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
 
+        // Building a JSON object on the go:
         try {
             JSONObject person = new JSONObject();
             person.put("username", "UPB");
@@ -62,9 +64,7 @@ public class StorageActivity extends AppCompatActivity {
             mascotaArray.put(mascota2);
 
             person.put("mascotas", mascotaArray);
-
             textViewJSON.setText(person.toString(3));
-
         } catch (JSONException e) {
             textViewJSON.setText("Error parsing JSON");
         }
@@ -72,30 +72,34 @@ public class StorageActivity extends AppCompatActivity {
 
     public void buttonClick(View view) {
         switch (view.getId()) {
+
+            // READ TO SHARED PREFERENCES
             case R.id.readSharedPreferencesButton: {
-                String usernameFromPreferences = sharedPreferences.getString(KEY_USERNAME, "No hay username");
+                String usernameFromPreferences = sharedPreferences.getString(KEY_USERNAME, "No existe username!");
                 if (!usernameFromPreferences.equals("")) {
                     Toast.makeText(this, usernameFromPreferences, Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(this, "Username Vacio", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Username Vacio!", Toast.LENGTH_SHORT).show();
                 }
                 break;
             }
+
+            // WRITE TO SHARED PREFERENCES
             case R.id.writeSharedPreferencesButton: {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString(KEY_USERNAME, editTextUsername.getText().toString());
                 editor.apply();
+                Toast.makeText(this, "Valor guardado correctamente!", Toast.LENGTH_SHORT).show();
                 break;
             }
+
+            // WRITE TO INTERNAL STORAGE FILE
             case R.id.writeFileButton: {
-
                 Person person = new Person("UPB", "p4ssw0rd");
-
                 String message = new Gson().toJson(person);
-
                 try {
                     FileOutputStream fileOutputStream = null;
-                    fileOutputStream = openFileOutput("myText.txt", MODE_PRIVATE);
+                    fileOutputStream = openFileOutput("my_text.txt", MODE_PRIVATE);
                     fileOutputStream.write(message.getBytes());
                     fileOutputStream.close();
 
@@ -107,13 +111,13 @@ public class StorageActivity extends AppCompatActivity {
                     Toast.makeText(this, "Error al escribir", Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
-
                 break;
             }
-            case R.id.readFileButton: {
 
+            // READ FROM INTERNAL STORAGE FILE
+            case R.id.readFileButton: {
                 try {
-                    FileInputStream fileInputStream = openFileInput("myText.txt");
+                    FileInputStream fileInputStream = openFileInput("my_text.txt");
                     InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
                     BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
                     StringBuffer stringBuffer = new StringBuffer();
@@ -129,8 +133,71 @@ public class StorageActivity extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                break;
+            }
 
+            // WRITE TO EXTERNAL STORAGE FILE
+            case R.id.writeSDFileButton: {
+                Person person = new Person("UPB", "p4ssw0rd");
+                String message = new Gson().toJson(person);
+                File externalSDFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), "my_text.txtt");
+                try {
+                    FileOutputStream fileOutputStream = null;
+                    fileOutputStream = new FileOutputStream(externalSDFile);
+//                    fileOutputStream = openFileOutput("my_textt.txt", MODE_PRIVATE);
+                    fileOutputStream.write(message.getBytes());
+                    fileOutputStream.close();
+                    Toast.makeText(this, "Escritura correcta SD", Toast.LENGTH_SHORT).show();
+                } catch (FileNotFoundException e) {
+                    Toast.makeText(this, "Error al escribir SD", Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    Toast.makeText(this, "Error al escribir SD", Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+                }
+                break;
+            }
 
+            // READ FROM EXTERNAL STORAGE FILE
+            case R.id.readSDFileButton: {
+                try {
+                    File externalSDFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), "my_textt.txt");
+                    FileInputStream fileInputStream = new FileInputStream(externalSDFile);
+                    InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
+                    BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+                    StringBuffer stringBuffer = new StringBuffer();
+                    String lines;
+                    while ((lines = bufferedReader.readLine()) != null) {
+                        stringBuffer.append(lines + "\n");
+                    }
+                    Person person = new Gson().fromJson(stringBuffer.toString().trim(), Person.class);
+                    Toast.makeText(this, person.getUsername(), Toast.LENGTH_LONG).show();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
+            }
+
+            // READ FROM RAW FILE
+            case R.id.readRawFileButton: {
+                try {
+                    InputStream inputStream = getResources().openRawResource(R.raw.my_text);
+                    InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+                    BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+                    StringBuffer stringBuffer = new StringBuffer();
+                    String lines;
+                    while ((lines = bufferedReader.readLine()) != null) {
+                        stringBuffer.append(lines + "\n");
+                    }
+                    Person person = new Gson().fromJson(stringBuffer.toString().trim(), Person.class);
+                    Toast.makeText(this, person.getUsername(), Toast.LENGTH_LONG).show();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 break;
             }
         }

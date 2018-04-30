@@ -1,59 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.programacion3.myapplication.StorageActivity"
-    android:orientation="vertical">
-
-    <EditText
-        android:id="@+id/editTextUsername"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    tools:context="com.programacion3.myapplication.StorageActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/readSharedPreferencesButton"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="READ"
-            android:onClick="buttonClick"/>
-        <Button
-            android:id="@+id/writeSharedPreferencesButton"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="WRITE"
-            android:onClick="buttonClick" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textViewJSON"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"/>
+        android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/readFileButton"
-            android:layout_weight="1"
-            android:layout_width="0dp"
+        <EditText
+            android:id="@+id/editTextUsername"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="READ FILE"
-            android:onClick="buttonClick"/>
-        <Button
-            android:id="@+id/writeFileButton"
-            android:layout_weight="1"
-            android:layout_width="0dp"
+            android:hint="Enter any value to write SharedPreferences"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/readSharedPreferencesButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="buttonClick"
+                android:text="READ SHARED P." />
+
+            <Button
+                android:id="@+id/writeSharedPreferencesButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="buttonClick"
+                android:text="WRITE SHARED P." />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/readFileButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="buttonClick"
+                android:text="READ FILE" />
+
+            <Button
+                android:id="@+id/writeFileButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="buttonClick"
+                android:text="WRITE FILE" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/readSDFileButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="buttonClick"
+                android:text="READ SD FILE" />
+
+            <Button
+                android:id="@+id/writeSDFileButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="buttonClick"
+                android:text="WRITE SD FILE" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/readRawFileButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="buttonClick"
+                android:text="READ RAW FILE" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewJSON"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="WRITE FILE"
-            android:onClick="buttonClick" />
+            android:textSize="20sp" />
     </LinearLayout>
 
-</LinearLayout>
+</ScrollView>
