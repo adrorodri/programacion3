@@ -130,6 +130,10 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 intent = new Intent(this, StorageActivity.class);
                 break;
             }
+            case R.id.buttonMainDatabase: {
+                intent = new Intent(this, DBActivity.class);
+                break;
+            }
             default: {
                 intent = new Intent(this, LayoutsActivity.class);
                 break;

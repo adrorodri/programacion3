@@ -29,6 +29,7 @@ public class StorageActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     static final String SHARED_PREFERENCES = "MySharedPreferences";
     static final String KEY_USERNAME = "username";
+    static final String FILE_NAME = "myText.txt";
     EditText editTextUsername;
     TextView textViewJSON;
 
@@ -99,7 +100,7 @@ public class StorageActivity extends AppCompatActivity {
                 String message = new Gson().toJson(person);
                 try {
                     FileOutputStream fileOutputStream = null;
-                    fileOutputStream = openFileOutput("my_text.txt", MODE_PRIVATE);
+                    fileOutputStream = openFileOutput(FILE_NAME, MODE_PRIVATE);
                     fileOutputStream.write(message.getBytes());
                     fileOutputStream.close();
 
@@ -117,7 +118,7 @@ public class StorageActivity extends AppCompatActivity {
             // READ FROM INTERNAL STORAGE FILE
             case R.id.readFileButton: {
                 try {
-                    FileInputStream fileInputStream = openFileInput("my_text.txt");
+                    FileInputStream fileInputStream = openFileInput(FILE_NAME);
                     InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
                     BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
                     StringBuffer stringBuffer = new StringBuffer();
@@ -140,7 +141,7 @@ public class StorageActivity extends AppCompatActivity {
             case R.id.writeSDFileButton: {
                 Person person = new Person("UPB", "p4ssw0rd");
                 String message = new Gson().toJson(person);
-                File externalSDFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), "my_text.txtt");
+                File externalSDFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), FILE_NAME);
                 try {
                     FileOutputStream fileOutputStream = null;
                     fileOutputStream = new FileOutputStream(externalSDFile);
@@ -161,7 +162,7 @@ public class StorageActivity extends AppCompatActivity {
             // READ FROM EXTERNAL STORAGE FILE
             case R.id.readSDFileButton: {
                 try {
-                    File externalSDFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), "my_textt.txt");
+                    File externalSDFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), FILE_NAME);
                     FileInputStream fileInputStream = new FileInputStream(externalSDFile);
                     InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
                     BufferedReader bufferedReader = new BufferedReader(inputStreamReader);

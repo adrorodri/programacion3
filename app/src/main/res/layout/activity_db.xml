@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.programacion3.myapplication.DBActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editTextNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre"/>
+        <EditText
+            android:id="@+id/editTextApellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Apellido"/>
+        <EditText
+            android:id="@+id/editTextCodigoUPB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Codigo UPB"/>
+
+        <Button
+            android:id="@+id/insertButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="buttonClick"
+            android:text="INSERT" />
+        <Button
+            android:id="@+id/updateButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="buttonClick"
+            android:text="UPDATE" />
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="buttonClick"
+            android:text="DELETE" />
+
+        <TextView
+            android:id="@+id/textViewJSON"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</ScrollView>
