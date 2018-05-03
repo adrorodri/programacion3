@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.programacion3.myapplication.LayoutsActivity">
+    tools:context="com.programacion3.myapplication.UI.Activities.LayoutsActivity">
 
     <Button
         android:id="@+id/buttonLinearLayout"

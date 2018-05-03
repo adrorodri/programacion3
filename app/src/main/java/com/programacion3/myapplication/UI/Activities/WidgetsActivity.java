@@ -1,4 +1,4 @@
-package com.programacion3.myapplication;
+package com.programacion3.myapplication.UI.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import com.programacion3.myapplication.R;
 
 public class WidgetsActivity extends AppCompatActivity {
 

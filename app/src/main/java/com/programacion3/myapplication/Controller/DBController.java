@@ -1,10 +1,16 @@
-package com.programacion3.myapplication;
+package com.programacion3.myapplication.Controller;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import com.programacion3.myapplication.Model.Person;
+
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by adro_ on 5/2/2018.
@@ -37,10 +43,40 @@ public class DBController extends SQLiteOpenHelper {
 
             getWritableDatabase().insertOrThrow("Personas", null, contentValues);
 
-        } catch (SQLException e){
+        } catch (SQLException e) {
             return false;
         }
 
+        return true;
+    }
+
+    public List<Person> selectAllPersonas() {
+        List<Person> personList = new LinkedList<>();
+        Cursor cursor = getReadableDatabase().rawQuery("SELECT * FROM Personas", null);
+        while (cursor.moveToNext()) {
+            personList.add(new Person(
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getInt(3)));
+        }
+        return personList;
+    }
+
+    public boolean updatePersona(String nombre, String apellido, String codigoUpb) {
+        try {
+            getWritableDatabase().execSQL("UPDATE Personas SET Nombre = '" + nombre + "', Apellido = '" + apellido + "' WHERE CodigoUpb = " + codigoUpb);
+        } catch (SQLException e) {
+            return false;
+        }
+        return true;
+    }
+
+    public boolean deletePersona(String codigoUpb) {
+        try {
+            getWritableDatabase().delete("Personas", "CodigoUpb = " + codigoUpb, null);
+        } catch (SQLException e) {
+            return false;
+        }
         return true;
     }
 }

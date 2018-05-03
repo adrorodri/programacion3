@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.programacion3.myapplication.LinearLayoutActivity"
+    tools:context="com.programacion3.myapplication.UI.Activities.LinearLayoutActivity"
     android:orientation="vertical">
 
     <LinearLayout

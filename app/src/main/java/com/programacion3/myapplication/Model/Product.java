@@ -1,4 +1,4 @@
-package com.programacion3.myapplication;
+package com.programacion3.myapplication.Model;
 
 /**
  * Created by adro_ on 4/17/2018.

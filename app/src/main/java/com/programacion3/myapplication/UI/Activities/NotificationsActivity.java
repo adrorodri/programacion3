@@ -1,21 +1,17 @@
-package com.programacion3.myapplication;
+package com.programacion3.myapplication.UI.Activities;
 
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.graphics.drawable.Icon;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.programacion3.myapplication.R;
 
 public class NotificationsActivity extends AppCompatActivity {
 

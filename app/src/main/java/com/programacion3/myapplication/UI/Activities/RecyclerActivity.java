@@ -1,10 +1,13 @@
-package com.programacion3.myapplication;
+package com.programacion3.myapplication.UI.Activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+
+import com.programacion3.myapplication.Model.Product;
+import com.programacion3.myapplication.R;
+import com.programacion3.myapplication.UI.Adapters.ProductsRecyclerAdapter;
 
 import java.util.LinkedList;
 import java.util.List;

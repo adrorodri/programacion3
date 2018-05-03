@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".UI.Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,23 +28,23 @@
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginSuccessActivity" />
-        <activity android:name=".ProgrammaticViewsActivity" />
-        <activity android:name=".LifeCycleActivity" />
-        <activity android:name=".MarginPaddingActivity" />
-        <activity android:name=".LayoutsActivity" />
-        <activity android:name=".WidgetsActivity" />
-        <activity android:name=".RelativeLayoutActivity" />
-        <activity android:name=".FrameLayoutActivity" />
-        <activity android:name=".LinearLayoutActivity" />
-        <activity android:name=".TableLayoutActivity" />
-        <activity android:name=".ImageActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".ListActivity" />
-        <activity android:name=".RecyclerActivity" />
-        <activity android:name=".NotificationsActivity" />
-        <activity android:name=".StorageActivity" />
-        <activity android:name=".DBActivity" />
+        <activity android:name=".UI.Activities.LoginSuccessActivity" />
+        <activity android:name=".UI.Activities.ProgrammaticViewsActivity" />
+        <activity android:name=".UI.Activities.LifeCycleActivity" />
+        <activity android:name=".UI.Activities.MarginPaddingActivity" />
+        <activity android:name=".UI.Activities.LayoutsActivity" />
+        <activity android:name=".UI.Activities.WidgetsActivity" />
+        <activity android:name=".UI.Activities.RelativeLayoutActivity" />
+        <activity android:name=".UI.Activities.FrameLayoutActivity" />
+        <activity android:name=".UI.Activities.LinearLayoutActivity" />
+        <activity android:name=".UI.Activities.TableLayoutActivity" />
+        <activity android:name=".UI.Activities.ImageActivity" />
+        <activity android:name=".UI.Activities.LoginActivity" />
+        <activity android:name=".UI.Activities.ListActivity" />
+        <activity android:name=".UI.Activities.RecyclerActivity" />
+        <activity android:name=".UI.Activities.NotificationsActivity" />
+        <activity android:name=".UI.Activities.StorageActivity" />
+        <activity android:name=".UI.Activities.DBActivity" />
     </application>
 
 </manifest>

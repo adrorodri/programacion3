@@ -1,4 +1,4 @@
-package com.programacion3.myapplication;
+package com.programacion3.myapplication.UI.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.programacion3.myapplication.Model.Product;
+import com.programacion3.myapplication.R;
 
 import java.util.LinkedList;
 import java.util.List;

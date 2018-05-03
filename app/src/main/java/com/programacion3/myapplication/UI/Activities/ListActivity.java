@@ -1,9 +1,12 @@
-package com.programacion3.myapplication;
+package com.programacion3.myapplication.UI.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.programacion3.myapplication.Model.Product;
+import com.programacion3.myapplication.R;
+import com.programacion3.myapplication.UI.Adapters.ProductsAdapter;
 
 import java.util.LinkedList;
 import java.util.List;

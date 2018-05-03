@@ -1,4 +1,4 @@
-package com.programacion3.myapplication;
+package com.programacion3.myapplication.UI.Activities;
 
 import android.Manifest;
 import android.content.Intent;
@@ -12,9 +12,10 @@ import android.view.View;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import com.programacion3.myapplication.R;
+
 import java.util.List;
 
-import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
 import pub.devrel.easypermissions.PermissionRequest;
 

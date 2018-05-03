@@ -1,56 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.programacion3.myapplication.DBActivity">
+    android:orientation="vertical"
+    tools:context="com.programacion3.myapplication.UI.Activities.DBActivity">
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/editTextNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:hint="Nombre" />
 
-        <EditText
-            android:id="@+id/editTextNombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nombre"/>
-        <EditText
-            android:id="@+id/editTextApellido"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Apellido"/>
-        <EditText
-            android:id="@+id/editTextCodigoUPB"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Codigo UPB"/>
+    <EditText
+        android:id="@+id/editTextApellido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Apellido" />
 
-        <Button
-            android:id="@+id/insertButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="buttonClick"
-            android:text="INSERT" />
-        <Button
-            android:id="@+id/updateButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="buttonClick"
-            android:text="UPDATE" />
-        <Button
-            android:id="@+id/deleteButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="buttonClick"
-            android:text="DELETE" />
+    <EditText
+        android:id="@+id/editTextCodigoUPB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Codigo UPB" />
 
-        <TextView
-            android:id="@+id/textViewJSON"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/insertButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonClick"
+        android:text="INSERT" />
 
-</ScrollView>
+    <Button
+        android:id="@+id/selectButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonClick"
+        android:text="SELECT" />
+
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonClick"
+        android:text="UPDATE" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="buttonClick"
+        android:text="DELETE" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewPersonas"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+</LinearLayout>

@@ -1,16 +1,14 @@
-package com.programacion3.myapplication;
+package com.programacion3.myapplication.UI.Activities;
 
 import android.content.Intent;
-import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import com.programacion3.myapplication.Model.Person;
+import com.programacion3.myapplication.R;
 
 public class LoginActivity extends AppCompatActivity {
 

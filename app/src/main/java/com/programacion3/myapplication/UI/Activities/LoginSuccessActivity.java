@@ -1,14 +1,14 @@
-package com.programacion3.myapplication;
+package com.programacion3.myapplication.UI.Activities;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.programacion3.myapplication.Model.Person;
+import com.programacion3.myapplication.R;
 
 public class LoginSuccessActivity extends AppCompatActivity {
 

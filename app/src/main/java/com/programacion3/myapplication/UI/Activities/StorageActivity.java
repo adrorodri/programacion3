@@ -1,4 +1,4 @@
-package com.programacion3.myapplication;
+package com.programacion3.myapplication.UI.Activities;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.programacion3.myapplication.Model.Person;
+import com.programacion3.myapplication.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
